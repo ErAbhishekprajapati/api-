@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Display</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
+</head>
+<body>
+    <div class="weather-info">
+        <div class="d-flex align-items-center">
+            <div class="temperature">
+                <h2 class="mb-0 font-weight-normal">
+                    <i class="mdi mdi-sun mr-2"></i>
+                    <span id="temperature">--</span><sup>&#176;C</sup>
+                </h2>
+            </div>
+            <div class="ml-2">
+                <h4 class="location font-weight-normal" id="location">Loading...</h4>
+                <h6 class="country font-weight-normal" id="country">Please wait</h6>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // API Key from OpenWeatherMap (replace with your own)
+        const apiKey = 'd4c8088e25469279f51afae0e7304bd8';
+        const city = 'Hariyana'; // You can change this city or get it dynamically
+
+        // Fetch weather data from OpenWeatherMap API
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+            .then(response => response.json())
+            .then(data => {
+                const temperature = data.main.temp;
+                const location = data.name;
+                const country = data.sys.country;
+
+                // Update the HTML with the fetched data
+                document.getElementById('temperature').textContent = temperature;
+                document.getElementById('location').textContent = location;
+                document.getElementById('country').textContent = country;
+            })
+            .catch(error => {
+                console.error('Error fetching weather data:', error);
+            });
+    </script>
+</body>
+</html>
