@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counting Falling Effect</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Falling number animation */
+    .falling-number {
+      position: absolute;
+      top: -50px;
+      font-size: 2rem;
+      color: #ff6347; /* Default color, change later in JS */
+      animation: fall 10s linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateX(0) rotate(0deg);
+      }
+      100% {
+        transform: translateX(100px) translateY(100vh) rotate(360deg);
+      }
+    }
+
+    /* Optional: Customizing number positions */
+    .falling-number:nth-child(odd) {
+      left: 10%;
+      animation-duration: 12s;
+      animation-delay: 0s;
+    }
+
+    .falling-number:nth-child(even) {
+      left: 50%;
+      animation-duration: 14s;
+      animation-delay: 2s;
+    }
+
+    .falling-number:nth-child(3) {
+      left: 70%;
+      animation-duration: 16s;
+      animation-delay: 4s;
+    }
+
+    /* Add more styling to the total students section */
+    #totalStudents {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #0056b3;
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+  <!-- Bootstrap container for layout -->
+  <div class="container">
+    <h1 class="text-center my-5">Welcome to My Students Page</h1>
+    <div class="text-center">
+      <button class="btn btn-primary">Check My Students</button>
+    </div>
+
+    <!-- Displaying the total number of students -->
+    <h2 id="totalStudents" class="text-center mt-5">
+      Total Students: <span id="studentCount">0</span>
+    </h2>
+  </div>
+
+  <!-- Add falling numbers effect for the total students -->
+  <div id="fallingNumbers"></div>
+
+  <!-- Bootstrap JS and Popper.js for interactivity if needed -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <script>
+    // Example of total students
+    let totalStudents = 50; // Change this to the actual number of students
+
+    // Function to count the number dynamically
+    function countStudents(targetNumber) {
+      let count = 0;
+      let studentCountElement = document.getElementById('studentCount');
+      let interval = setInterval(() => {
+        count++;
+        studentCountElement.textContent = count;
+        if (count === targetNumber) {
+          clearInterval(interval); // Stop the counting once we reach the target
+        }
+      }, 100); // Increment every 100ms
+    }
+
+    // Function to create falling numbers with random positions and colors
+    function createFallingNumbers(count) {
+      const container = document.getElementById('fallingNumbers');
+      for (let i = 0; i < count; i++) {
+        const fallingElement = document.createElement('div');
+        fallingElement.classList.add('falling-number');
+
+        // Set the falling number (the total students count)
+        fallingElement.textContent = count;
+
+        // Randomize the color of each falling number
+        const colors = ['#ff6347', '#32cd32', '#1e90ff', '#ffa500', '#800080'];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        fallingElement.style.color = randomColor;
+
+        // Randomize the starting position and delay
+        const randomLeft = Math.random() * 100; // Random left position (0% to 100%)
+        const randomDelay = Math.random() * 5; // Random delay for each falling number
+        const randomDuration = 10 + Math.random() * 5; // Random animation duration
+
+        fallingElement.style.left = `${randomLeft}%`;
+        fallingElement.style.animationDuration = `${randomDuration}s`;
+        fallingElement.style.animationDelay = `${randomDelay}s`;
+
+        // Append the element to the container
+        container.appendChild(fallingElement);
+      }
+    }
+
+    // Start counting and create falling numbers
+    setTimeout(() => {
+      countStudents(totalStudents);
+      createFallingNumbers(totalStudents);
+    }, 500); // Slight delay before starting the effect
+
+  </script>
+</body>
+</html>
