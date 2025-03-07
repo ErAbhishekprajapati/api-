@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Testimonials</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Correct Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .testimonial-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .quote-icon {
+            font-size: 24px;
+            transition: transform 0.3s;
+        }
+        .quote-icon:hover {
+            transform: scale(1.2); /* Scales the quote icon on hover */
+        }
+        .social-icons i {
+            font-size: 20px;
+            margin: 0 10px; /* Increased spacing between social icons */
+            cursor: pointer;
+            transition: color 0.3s, transform 0.3s; /* Added transform for smooth effect */
+        }
+        .social-icons i:hover {
+            color: #007bff; /* Change color on hover */
+            transform: scale(1.1); /* Slight scaling on hover */
+        }
+        .quote-text {
+            display: flex;
+            justify-content: space-between; /* Align text to start and end */
+            align-items: center;
+        }
+        .quote-text p {
+            margin: 0;
+        }
+        .testimonial-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 350px; /* Ensure all cards are of equal height */
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center my-5">
+        <h2><i class="fas fa-quote-left"></i> Free Quote Slide Customer Testimonial for a Software Product <i class="fas fa-quote-right"></i></h2>
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <div class="testimonial-card">
+                    <div class="quote-text">
+                        <i class="fas fa-quote-left text-danger quote-icon"></i>
+                        <p>“This slide is 100% editable. Adapt it to your needs and capture your audience’s attention.”</p>
+                        <i class="fas fa-quote-right text-danger quote-icon"></i>
+                    </div>
+                    <img src="image1.jpg" alt="Peter Smith" class="testimonial-img">
+                    <h5 class="text-danger">Peter Smith</h5>
+                    <p>Graphic Designer, Company ABC</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="testimonial-card">
+                    <div class="quote-text">
+                        <i class="fas fa-quote-left text-info quote-icon"></i>
+                        <p>“This slide is 100% editable. Adapt it to your needs and capture your audience’s attention.”</p>
+                        <i class="fas fa-quote-right text-info quote-icon"></i>
+                    </div>
+                    <img src="image2.jpg" alt="Rosina Butler" class="testimonial-img">
+                    <h5 class="text-info">Rosina Butler</h5>
+                    <p>Software Developer, Company XYZ</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="testimonial-card">
+                    <div class="quote-text">
+                        <i class="fas fa-quote-left text-primary quote-icon"></i>
+                        <p>“This slide is 100% editable. Adapt it to your needs and capture your audience’s attention.”</p>
+                        <i class="fas fa-quote-right text-primary quote-icon"></i>
+                    </div>
+                    <img src="image3.jpg" alt="Sophia Christopher" class="testimonial-img">
+                    <h5 class="text-primary">Sophia Christopher</h5>
+                    <p>Development Team Manager, Company AX</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="testimonial-card">
+                    <div class="quote-text">
+                        <i class="fas fa-quote-left text-dark quote-icon"></i>
+                        <p>“This slide is 100% editable. Adapt it to your needs and capture your audience’s attention.”</p>
+                        <i class="fas fa-quote-right text-dark quote-icon"></i>
+                    </div>
+                    <img src="C:\Users\abhishek prajapati\Desktop\myaadhar.jpg" alt="Jessica Dowson" class="testimonial-img">
+                    <h5 class="text-dark">Jessica Dowson</h5>
+                    <p>Software Developer, Company ZX</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
